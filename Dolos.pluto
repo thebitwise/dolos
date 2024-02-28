@@ -2688,6 +2688,7 @@ function set_up_player_actions(pid)
             FREEZE_ENTITY_POSITION(truck, true)
         end
         util.yield(2000)
+        local init_c
         switch index do 
             case 1:
                 TASK_VEHICLE_DRIVE_TO_COORD(driver, truck, math.random(1000), math.random(1000), math.random(100), 100, 1, GET_ENTITY_MODEL(truck), 786996, 5, 0)
@@ -2709,7 +2710,7 @@ function set_up_player_actions(pid)
                     fail('Target is a modder and detection protection is active.')
                     return
                 end
-                local init_c = players.get_position(pid)
+                init_c = players.get_position(pid)
                 FREEZE_ENTITY_POSITION(truck, false)
                 TASK_PLANE_MISSION(driver, truck, 0, 0, math.random(-1000, 1000), math.random(-1000, 1000), 400.0, 4, 100.0, 0.0, 90.0, 400.0, 800.0)
                 c = GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(truck, 0.0, -4.0, 0.0)
@@ -2729,7 +2730,7 @@ function set_up_player_actions(pid)
                     fail('Target is a modder and detection protection is active.')
                     return
                 end
-                local init_c = players.get_position(pid)
+                init_c = players.get_position(pid)
                 TASK_PLANE_MISSION(driver, truck, 0, 0, math.random(-1000, 1000), math.random(-1000, 1000), 400.0, 4, 100.0, 0.0, 90.0, 400.0, 800.0)
                 c = GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(truck, 0.0, -4.0, 0.0)
                 entities.request_control(veh)
